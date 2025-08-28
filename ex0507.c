@@ -1,41 +1,46 @@
+/* Create a program that declares a 3x3 matrix (2D array) of integers
+Initializes it with values 1 through 9 (row by row),creates a function called processMatrix that:
+Takes the matrix and its size as parameters
+Calculates the sum of all elements in the matrix
+Calculates the sum of diagonal elements (both main and anti-diagonal)
+In the main function, print the following information with appropriate labels:
+“Sum of all elements: [value]”
+"Sum of main diagonal: [value]"
+"Sum of anti-diagonal: [value]" */
 #include <stdio.h>
 
-// Function to calculate the sum of boundary elements
-int sumBoundary(int matrix[][100], int size) {
-    int sum=0,i,j;
-    if(size==1)
-    {
-        printf("%d",matrix[0][0]);
+void processMatrix(int matrix[][3], int size) {
+    int total_sum = 0;
+    int main_diagonal_sum = 0;
+    int anti_diagonal_sum = 0;
+    
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            total_sum += matrix[i][j];
+            
+            if (i == j) {
+                main_diagonal_sum += matrix[i][j];
+            }
+            
+            if (i + j == size - 1) {
+                anti_diagonal_sum += matrix[i][j];
+            }
+        }
     }
-   
-        for (int j = 0; j < size; j++) 
-        {
-        sum=sum+matrix[0][j];
-        sum=sum+matrix[size-1][j];
-        
-        }
-       
-        for (int i = 1; i <size-1; i++) 
-        { 
-          sum=sum+matrix[i][0];
-          sum=sum+matrix[i][size-1];
-        }
-    return sum;
+    
+    printf("Sum of all elements: %d\n", total_sum);
+    printf("Sum of main diagonal: %d\n", main_diagonal_sum);
+    printf("Sum of anti-diagonal: %d\n", anti_diagonal_sum);
 }
 
 int main() {
-    int size;
-    scanf("%d", &size);
+    int matrix[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
     
-    int matrix[100][100];
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            scanf("%d", &matrix[i][j]);
-        }
-    }
-    
-    int result = sumBoundary(matrix, size);
-    printf("%d\n", result);
+    processMatrix(matrix, 3);
     
     return 0;
 }
