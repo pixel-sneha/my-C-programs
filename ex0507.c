@@ -1,12 +1,7 @@
-/* Create a program that declares a 3x3 matrix (2D array) of integers
-Initializes it with values 1 through 9 (row by row),creates a function called processMatrix that:
-Takes the matrix and its size as parameters
+/* Create a program that declares a 3x3 matrix (2D array) of integers,Initializes it with values 1 through 9 (row by row),
+creates a function called processMatrix that:
 Calculates the sum of all elements in the matrix
-Calculates the sum of diagonal elements (both main and anti-diagonal)
-In the main function, print the following information with appropriate labels:
-“Sum of all elements: [value]”
-"Sum of main diagonal: [value]"
-"Sum of anti-diagonal: [value]" */
+Calculates the sum of diagonal elements (both main and anti-diagonal) */
 #include <stdio.h>
 
 void processMatrix(int matrix[][3], int size) {
@@ -34,13 +29,18 @@ void processMatrix(int matrix[][3], int size) {
 }
 
 int main() {
-    int matrix[3][3] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
+    int i,j,matrix[3][3];
+    printf("ENTER ARRAY ELEMENTS: \n");
+       for(i=0;i<3;i++)
+       {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&matrix[i][j]);
+        }
+       }  
     
-    processMatrix(matrix, 3);
+    
+    processMatrix(matrix, 3); 
     
     return 0;
 }
