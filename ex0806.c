@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-
+//passing pointers to function
 void displayValue(int *ptr)
 {
-    printf("Value at address: %d\n",*ptr);
+    printf("Value at address: %d\n",*ptr); //passing pointers does NOT cretae a copy of the value but works DIRECTLY ON the original one 
+    //hence it returns modified value
 }
 int main() {
     
