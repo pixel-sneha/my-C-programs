@@ -5,7 +5,10 @@ void bubble_sort(int arr[], int n)
     int i,j;
   for(i=0;i<n;i++)
   {
-    for(j=0;j<n-1;j++)
+    int swapped = 0;
+    for(j=0;j<n-i-1;j++)
+    //j<n-i-1 will have the same result as j<n-1
+    //the n-i-1 is the last index that still needs sorting in the current pass, means no need to compare sorted last elements
     {
       if(arr[j]>arr[j+1]) //compares two interconnected elements and swaps them if previus one is larger
       //changing the > sign to < will get the decreasing sequence
@@ -13,7 +16,12 @@ void bubble_sort(int arr[], int n)
         int temp = arr[j];
         arr[j] = arr[j+1];
         arr[j+1] = temp;
+        swapped = 1; 
       }
+    }
+    if(swapped == 0)
+    {
+        break;
     }
   }
 }
