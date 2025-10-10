@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 
-// TODO: Define the Rectangle struct here
+
 struct Rectangle {
     int width;
     int height;
     char color[15];
 };
 
-// TODO: Write the displayRectangle function here
+// Writing the displayRectangle function here
 void displayRectangle(struct Rectangle r) {
     printf("Rectangle Details:\n");
     printf("Width: %d\n", r.width);
@@ -17,7 +17,7 @@ void displayRectangle(struct Rectangle r) {
     printf("Area: %d\n", r.width * r.height);
 }
 
-// TODO: Write the modifyRectangle function here
+// Writing the modifyRectangle function here
 void modifyRectangle(struct Rectangle r) {
     r.width = r.width * 2;
     r.height = r.height * 2;
