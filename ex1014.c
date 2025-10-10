@@ -27,7 +27,7 @@ void modifyRectangle(struct Rectangle r) {
 }
 
 int main() {
-    // Read input
+   
     int width, height;
     char color[15];
     
@@ -35,20 +35,17 @@ int main() {
     scanf("%d", &height);
     scanf("%s", color);
     
-    // TODO: Create Rectangle variable and assign input values
+    // Creating Rectangle variable and assigning input values
     struct Rectangle rect;
     rect.width = width;
     rect.height = height;
     strcpy(rect.color, color);
     
-    // TODO: Print "Original rectangle:" and call displayRectangle
     printf("Original rectangle:\n");
     displayRectangle(rect);
     
-    // TODO: Call modifyRectangle
     modifyRectangle(rect);
     
-    // TODO: Print "After modifyRectangle call:" and call displayRectangle again
     printf("After modifyRectangle call:\n");
     displayRectangle(rect);
     
