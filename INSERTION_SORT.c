@@ -33,4 +33,5 @@ int main()
     Insertion_sort(arr,n);
     printf("Sorted array:\n");
     printArray(arr,n);    
+
 }
