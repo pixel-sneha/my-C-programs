@@ -9,7 +9,7 @@ void Insertion_sort(int arr[], int n)
         int j = i-1;
        while(j>=0 && arr[j]>temp)
        {
-        arr[j+1] = arr[j]; //arr i 
+        arr[j+1] = arr[j]; //arr j+1 IS arr i but as it changes each time in the loop, here we have to use j+1 as it is dynamic 
         j--;
        }
        arr[j+1] = temp;
@@ -35,3 +35,4 @@ int main()
     printArray(arr,n);    
 
 }
+
